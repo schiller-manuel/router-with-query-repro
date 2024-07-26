@@ -7,6 +7,7 @@ export function createRouter() {
   const queryClient = new QueryClient();
   const router = createTanStackRouter({
     routeTree,
+    context: {queryClient}
   });
   const augmented = routerWithQueryClient(router, queryClient);
 

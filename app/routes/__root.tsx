@@ -1,9 +1,11 @@
-import { createRootRoute } from "@tanstack/react-router";
+import { createRootRouteWithContext } from "@tanstack/react-router";
 import { Outlet, ScrollRestoration } from "@tanstack/react-router";
 import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
 import * as React from "react";
+import { QueryClient } from "@tanstack/react-query";
 
-export const Route = createRootRoute({
+
+export const Route = createRootRouteWithContext<{queryClient: QueryClient}>()({
   meta: () => [
     {
       charSet: "utf-8",
